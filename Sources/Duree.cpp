@@ -70,6 +70,39 @@ bool Duree::estEgale(Duree duree) const {
   return false;
 }
 
+int Duree::enSecondes() const {
+  return m_heures * 60 * 60 + m_minutes * 60 + m_secondes;
+}
+
 bool operator==(Duree const& a, Duree const& b) {
   return a.estEgale(b);
+}
+
+bool operator!=(Duree const& a, Duree const& b) {
+  return !(a == b);
+}
+
+bool operator<(Duree const& a, Duree const& b) {
+  if(a.enSecondes() < b.enSecondes()) {
+    return true;
+  }
+  return false;
+}
+
+bool operator<=(Duree const& a, Duree const& b) {
+  if(a.enSecondes() <= b.enSecondes()) {
+    return true;
+  }
+  return false;
+}
+
+bool operator>(Duree const& a, Duree const& b) {
+  return !(a < b);
+}
+
+bool operator>=(Duree const& a, Duree const& b) {
+  if(a.enSecondes() >= b.enSecondes()) {
+    return true;
+  }
+  return false;
 }

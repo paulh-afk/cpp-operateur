@@ -15,8 +15,16 @@ class Duree {
     ~Duree();
     void afficher() const;
     bool estEgale(Duree duree) const;
+    int enSecondes() const;
 };
 
 bool operator==(Duree const& a, Duree const& b);
+bool operator!=(Duree const& a, Duree const& b);
+
+bool operator<(Duree const& a, Duree const& b);
+bool operator<=(Duree const& a, Duree const& b);
+
+bool operator>(Duree const& a, Duree const& b);
+bool operator>=(Duree const& a, Duree const& b);
 
 #endif // DUREE
